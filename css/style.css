@@ -32,6 +32,38 @@ html {
     font-size: 10px;
     overflow-x: hidden;
 }
+html {
+    scrollbar-3dLight-Color: #efefef;
+    scrollbar-arrow-color: #dfdfdf;
+    scrollbar-base-color: #efefef;
+    scrollbar-Face-Color: #dfdfdf;
+    scrollbar-Track-Color: #efefef;
+    scrollbar-DarkShadow-Color: #efefef;
+    scrollbar-Highlight-Color: #efefef;
+    scrollbar-Shadow-Color: #efefef;
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* 스크롤바의 width */
+::-webkit-scrollbar-track {
+    background-color: #619ab4;
+}
+
+/* 스크롤바의 전체 배경색 */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #1697bf, #62b7ac);
+}
+
+/* 스크롤바 색 */
+::-webkit-scrollbar-button {
+    display: none;
+}
 
 body {
     font-family: 'Noto Sans KR', 'NanumSquare', '돋움', Dotum, '굴림', Gulim, Helvetica, 'Apple SD Gothic Neo', Tahoma, Geneva, sans-serif, verdana;
@@ -131,7 +163,67 @@ body {
     width: 1260px;
     margin: 0 auto;
 }
+/* 오른쪽 고정 기능 */
+.control {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    z-index: 999999;
+}
+.control-menu {
+    position: relative;
+    display: block;
+}
+.control-menu::before{
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 10%;
+    width: 1px;
+    height: 80%;
+    background-color: #b6b9bc;
+}
+.control-menu li {
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-bottom: 5px;
+}
+.control-menu li a {
+    display: inline-block;
+    position: relative;
+    padding-left: 17px;
+    padding-right: 26px;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #b6b9bc;
+    line-height: 30px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
 
+.control-menu li a::after{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 11px;
+    height: 11px;
+    margin-top: -5px;
+    border-radius: 50%;
+    background: #b6b9bc;
+    content: '';
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.control-active{
+    color: #fff !important;
+    background: #d82744 !important;
+}
+.control-active::after{
+    background-color: #fff !important;
+}
 .wrap {
     position: relative;
     display: block;
@@ -1362,7 +1454,12 @@ body {
 .customer-box-cont:hover {
     background-color: #108ad3 !important;
 }
-
+.effect-op{
+    opacity: 0;
+}
+.effect-op-active{
+    opacity: 1;
+}
 .customer-link {
     position: relative;
     display: block;
