@@ -7,7 +7,21 @@ window.onload = function () {
             return window.innerWidth < desktop;
         }
     });
+    let modal_close = $('.modal-close');
+    let modal_close_2 = $('.modal-close-2');
+    let modal = $('.modal');
+    let modal_review = $('.modal-review');
+    let modal_review_bt = $('.modal-review-bt');
 
+    modal_close.click(function(){
+        modal.hide();
+    });
+    modal_close_2.click(function(){
+        modal.hide();
+    });
+    modal_review_bt.click(function(){
+        modal_review.show();
+    });
     // 스크롤시 애니메이션 
     $(".customer-box-cont").each(function (index, el) {
         new Waypoint({
